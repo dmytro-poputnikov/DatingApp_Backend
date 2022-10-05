@@ -7,9 +7,7 @@ using SQLitePCL;
 namespace DatingAPP.Controllers
 {
 
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
 
