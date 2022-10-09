@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DatingAPP.Data;
 using DatingAPP.Extensions;
 using DatingAPP.Interfaces;
+using DatingAPP.Middleware;
 using DatingAPP.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -60,6 +61,8 @@ namespace API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIv5 v1"));
             }
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseHttpsRedirection();
 
